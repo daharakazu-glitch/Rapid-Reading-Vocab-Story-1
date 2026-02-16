@@ -4,96 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Learning App</title>
+    <title>速読英単語 必修編 マスターアプリ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Times+New+Roman&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Times New Roman"', '"Noto Serif JP"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-
-    <header>
-        <h1 id="app-title">English Learning App</h1>
-        <button id="print-btn" class="header-btn" title="PDF/Print">
-            <i class="fas fa-print"></i> Print / PDF
-        </button>
-    </header>
-
-    <nav>
-        <button class="tab-btn active" data-tab="text-tab">English Text</button>
-        <button class="tab-btn" data-tab="vocab-tab">Vocabulary</button>
-    </nav>
-
-    <main>
-        <!-- English Text Tab -->
-        <section id="text-tab" class="tab-content active">
-            <div class="audio-player-container">
-                <button id="play-pause-btn" class="audio-control"><i class="fas fa-play"></i></button>
-                <button id="stop-audio-btn" class="audio-control"><i class="fas fa-stop"></i></button>
-                <!-- Progress bar removed for TTS as standard API doesn't easily support seeking/duration in all browsers -->
-                <span id="audio-status">Click Play to Listen</span>
-            </div>
-            <div id="text-container" class="text-content">
-                <!-- Text will be injected here -->
-            </div>
-            <div id="translation-container" class="hidden">
-                <!-- Translation will be injected here -->
-            </div>
-            <button id="toggle-translation-btn">Show/Hide Translation</button>
-        </section>
-
-        <!-- Vocabulary Tab -->
-        <section id="vocab-tab" class="tab-content">
-            <div id="vocab-list" class="vocab-list">
-                <!-- Vocabulary items will be injected here -->
-            </div>
-        </section>
-    </main>
-
-    <!-- Vocabulary Detail Modal -->
-    <div id="vocab-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 id="modal-word"></h2>
-            <p id="modal-definition"></p>
-
-            <div id="modal-examples">
-                <!-- Examples injected here -->
-            </div>
-
-            <div class="recording-section">
-                <h3>Practice Pronunciation</h3>
-                <div class="record-controls">
-                    <button id="record-btn" class="record-control"><i class="fas fa-microphone"></i> Record</button>
-                    <button id="stop-btn" class="record-control" disabled><i class="fas fa-stop"></i> Stop</button>
-                </div>
-                <audio id="user-recording" controls></audio>
-                <div id="score-display" class="hidden">
-                    Score: <span id="score-value">--</span>/100
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Print Modal -->
-    <div id="print-modal" class="modal hidden">
-        <div class="modal-content print-modal-content">
-            <span class="close-modal close-print">&times;</span>
-            <h2>Select Print/PDF Layout</h2>
-            <div class="print-options">
-                <label><input type="radio" name="print-layout" value="text-only" checked> 1. English Text Only</label>
-                <label><input type="radio" name="print-layout" value="text-highlight"> 2. English Text +
-                    Highlights</label>
-                <label><input type="radio" name="print-layout" value="text-trans"> 3. English Text + Translation</label>
-                <label><input type="radio" name="print-layout" value="vocab-list"> 4. Vocabulary List</label>
-                <label><input type="radio" name="print-layout" value="vocab-test"> 5. Vocabulary Test (No
-                    Definitions)</label>
-                <label><input type="radio" name="print-layout" value="comprehensive"> 6. Comprehensive Set (All)</label>
-            </div>
-            <button id="start-print-btn" class="primary-btn">Print / Save as PDF</button>
-        </div>
-    </div>
-
+<body class="bg-slate-50 text-slate-900 font-serif">
+    <div id="app-root"></div>
     <script src="script.js"></script>
 </body>
 
