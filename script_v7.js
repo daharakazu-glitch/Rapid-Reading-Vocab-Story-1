@@ -204,7 +204,7 @@ function renderHeader() {
     <header class="bg-blue-900 text-white p-5 shadow sticky top-0 z-20">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
           <div>
-            <h1 class="font-bold text-2xl md:text-3xl leading-tight">${APP_META.title} <span class="text-xs bg-rose-600 text-white px-2 py-0.5 rounded ml-2 align-middle">v5.1 (Fixed)</span></h1>
+            <h1 class="font-bold text-2xl md:text-3xl leading-tight">${APP_META.title} <span class="text-xs bg-emerald-600 text-white px-2 py-0.5 rounded ml-2 align-middle">v5.2 (Absolute)</span></h1>
             <p class="text-blue-200 text-lg mt-1">${APP_META.subTitle}</p>
           </div>
           <div class="bg-black/20 p-2 rounded flex items-center">
@@ -319,13 +319,13 @@ function renderVocabCard(item) {
         <div onclick="toggleSelect(${item.id})" class="w-16 flex items-center justify-center cursor-pointer border-r border-slate-100 hover:bg-slate-50">
           <i data-lucide="${isSelected ? 'check-square' : 'square'}" class="${isSelected ? 'text-blue-600' : 'text-slate-300'} w-8 h-8"></i>
         </div>
-        <div class="flex-1 flex cursor-pointer" onclick="toggleVocabExpand(${item.id})">
-          <!-- ID Column -->
-          <div class="pt-6 pl-4 pr-2 w-24 flex-shrink-0">
+        <div class="flex-1 relative cursor-pointer" onclick="toggleVocabExpand(${item.id})">
+          <!-- ID Badge (Absolute) -->
+          <div class="absolute top-6 left-4 z-10 pointer-events-none">
             <span class="bg-blue-100 text-blue-800 text-base font-bold w-12 h-8 flex items-center justify-center rounded">${item.id}</span>
           </div>
-          <!-- Content Column -->
-          <div class="flex-1 py-5 pr-5 pl-2 overflow-hidden">
+          <!-- Content Column (With padding to clear ID) -->
+          <div class="py-5 pr-5 pl-24 overflow-hidden min-h-[5rem]">
             <div class="flex justify-between items-start">
               <div class="flex items-center gap-3">
                 <h3 class="text-2xl font-bold ${isSelected ? 'text-slate-900' : 'text-slate-500'}">${item.word}</h3>
