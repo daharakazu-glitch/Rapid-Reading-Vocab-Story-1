@@ -421,7 +421,7 @@ function renderTextComponent() {
             <i data-lucide="${state.isPlaying ? 'pause' : 'play'}" class="w-5 h-5"></i> ${state.isPlaying ? 'Stop' : 'Listen'}
           </button>
         </div>
-        <p class="text-2xl leading-loose text-justify text-slate-800 font-serif tracking-wide">
+        <p class="text-2xl leading-loose text-left text-slate-800 font-serif tracking-wide">
           ${words}
         </p>
       </div>
@@ -488,10 +488,10 @@ function renderVocabCard(item) {
   return `
     <div class="bg-white rounded-lg shadow border transition-colors ${isSelected ? 'border-blue-400 bg-blue-50/30' : 'border-slate-200'}">
       <div class="flex">
-        <div onclick="toggleSelect(${item.id})" class="w-16 flex items-center justify-center cursor-pointer border-r border-slate-100 hover:bg-slate-50">
+        <div onclick="toggleSelect('${item.id}')" class="w-16 flex items-center justify-center cursor-pointer border-r border-slate-100 hover:bg-slate-50">
           <i data-lucide="${isSelected ? 'check-square' : 'square'}" class="${isSelected ? 'text-blue-600' : 'text-slate-300'} w-8 h-8"></i>
         </div>
-        <div class="flex-1 p-5 cursor-pointer" onclick="toggleVocabExpand(${item.id})">
+        <div class="flex-1 p-5 cursor-pointer" onclick="toggleVocabExpand('${item.id}')">
           <div class="flex justify-between items-start">
             <div class="flex items-center gap-3">
               <span class="bg-blue-100 text-blue-800 text-base font-bold w-12 h-8 flex items-center justify-center rounded flex-shrink-0">${item.id}</span>
@@ -573,7 +573,7 @@ function renderRecorder(id, type, targetText) {
             <span class="text-xs font-bold">SCORE</span>
             <span class="text-lg font-bold leading-none">${score}</span>
         </div>
-        <button onclick="startRecording(${id}, '${type}', '${safeText}')" class="p-2 bg-slate-100 rounded-full hover:bg-slate-200">
+        <button onclick="startRecording('${id}', '${type}', '${safeText}')" class="p-2 bg-slate-100 rounded-full hover:bg-slate-200">
             <i data-lucide="rotate-ccw" class="w-4 h-4 text-slate-500"></i>
         </button>
       </div>
@@ -581,7 +581,7 @@ function renderRecorder(id, type, targetText) {
   }
 
   return `
-    <button onclick="startRecording(${id}, '${type}', '${safeText}')" class="bg-blue-50 text-blue-600 hover:bg-blue-100 px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 transition-colors">
+    <button onclick="startRecording('${id}', '${type}', '${safeText}')" class="bg-blue-50 text-blue-600 hover:bg-blue-100 px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 transition-colors">
       <i data-lucide="mic" class="w-4 h-4"></i> Record
     </button>
   `;

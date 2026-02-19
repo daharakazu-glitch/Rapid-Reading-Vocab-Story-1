@@ -29,6 +29,24 @@
       ]
     },
     {
+      "id": "16-1",
+      "word": "maternal",
+      "definition": "【形】母の；母親らしい",
+      "examples": []
+    },
+    {
+      "id": "16-2",
+      "word": "pregnancy",
+      "definition": "【名】妊娠",
+      "examples": []
+    },
+    {
+      "id": "16-3",
+      "word": "pregnant",
+      "definition": "【形】妊娠して",
+      "examples": []
+    },
+    {
       "id": 17,
       "word": "birth",
       "definition": "【名】誕生",
@@ -49,6 +67,12 @@
           "ja": "（（私たちは，このお祭りが地域に活気を生み出すことを願っています。））"
         }
       ]
+    },
+    {
+      "id": "18-1",
+      "word": "generation",
+      "definition": "【名】発生；世代",
+      "examples": []
     },
     {
       "id": 19,
@@ -95,6 +119,12 @@
       ]
     },
     {
+      "id": "22-1",
+      "word": "hunter",
+      "definition": "【名】猟師",
+      "examples": []
+    },
+    {
       "id": 23,
       "word": "instead",
       "definition": "【副】その代わりに；《～の》代わりに《of》",
@@ -128,6 +158,12 @@
       ]
     },
     {
+      "id": "25-1",
+      "word": "security",
+      "definition": "【名】安全；警備",
+      "examples": []
+    },
+    {
       "id": 26,
       "word": "offend",
       "definition": "【他】の気分を害する　【自】罪を犯す",
@@ -137,6 +173,18 @@
           "ja": "（（あなたの発言は本当に彼女を怒らせたから，謝った方がいい。））"
         }
       ]
+    },
+    {
+      "id": "26-1",
+      "word": "offense",
+      "definition": "【名】犯罪；侮辱；攻撃",
+      "examples": []
+    },
+    {
+      "id": "26-2",
+      "word": "offensive",
+      "definition": "【形】不快な；無礼な；攻撃的な",
+      "examples": []
     }
   ]
 }
