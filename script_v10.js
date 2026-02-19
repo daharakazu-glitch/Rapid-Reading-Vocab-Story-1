@@ -271,11 +271,11 @@ function checkPronunciation(target, spoken) {
   let score = Math.round(similarity);
   let feedback = "";
 
-  // Boost score slightly to be lenient, but cap at 98 if not perfect
-  if (score > 80) score = Math.min(98, score + 5);
+  // Strict scoring: No artificial boost
+  // score = Math.min(98, score + 5); // REMOVED
 
-  if (score >= 80) feedback = "Great job! Very close.";
-  else if (score >= 60) feedback = "Good effort. Try to articulate clearly.";
+  if (score >= 90) feedback = "Great job! Very close.";
+  else if (score >= 75) feedback = "Good effort, but check your pronunciation.";
   else feedback = "Keep practicing. Listen and try again.";
 
   return { score, feedback };
