@@ -44,7 +44,7 @@ let HIGHLIGHTS = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const response = await fetch('data.json'); // Use local data.json
+    const response = await fetch(`data.json?t=${new Date().getTime()}`); // Force fresh load
     const data = await response.json();
 
     // Map data.json to App Structure
